@@ -6,6 +6,33 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(
+                Icons.home,
+                color: Colors.green,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: 'Profile',
+              icon: Icon(Icons.person_2_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'Settings',
+              icon: Icon(Icons.settings_outlined),
+            ),
+          ],
+          currentIndex: 0, // Indeks tab saat aplikasi pertama kali dimulai
+          onTap: (index) {
+            if (index == 1) {
+              // Navigasi ke halaman profile jika tab Profile dipilih
+              Navigator.pushNamed(context, '/profile');
+            }
+          },
+        ),
         backgroundColor: Colors.green[100],
         body: SingleChildScrollView(
           child: Center(
