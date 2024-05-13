@@ -1,1 +1,1 @@
-Tampilan Login dan Register
+Tampilan Login dan Register, Router, Bottom Navbar, API
